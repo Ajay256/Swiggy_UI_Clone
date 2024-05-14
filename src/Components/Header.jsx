@@ -58,19 +58,22 @@ export default function Header() {
             <img src="img/logo.png" alt="" className='w-full' />
             </div>
             <div className=''>
-                <span className='font-bold border-b-[3px] border-[black]'>Charbaag</span> Lucknow, Uttar Pradesh, India <RxCaretDown onClick={showSideMenu} fontSize={25} className='font-bold inline text-[#fc8019] cursor-pointer'/>
+                <span className='font-bold border-b-[3px] border-[black]'>Others</span> <RxCaretDown onClick={showSideMenu} fontSize={25} className='font-bold inline text-[#fc8019] cursor-pointer'/>
             </div>
             <nav className='flex list-none gap-10 ml-auto text-[18px] font-semibold'>
-                {
+                <input type="search" placeholder='Search ' className='border border-black w-[300px] p-2 rounded-md lg:hidden'/>
+                <ul className='hidden lg:flex gap-16'>
+                    {
                     links.map(
                         (link, index) => {
-                        return <li className='cursor-pointer flex items-center hover:text-[#fc8019] gap-2'key={index}>
-                            {link.icon}
+                        return <li className='cursor-pointer flex items-center hover:text-[#fc8019]'key={index}>
+                            {link.icon} &nbsp;
                             {link.name}
                         </li>
+                        }
+                        )
                     }
-                    )
-                }
+                </ul>
             </nav>
         </div>
     </header>
